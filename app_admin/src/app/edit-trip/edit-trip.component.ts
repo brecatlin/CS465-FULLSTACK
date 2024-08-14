@@ -5,7 +5,6 @@ import { FormBuilder, FormGroup, Validators, ReactiveFormsModule } from "@angula
 import { TripDataService } from '../services/trip-data.service';
 import { Trip } from '../models/trip';
 
-
 @Component({
   selector: 'app-edit-trip',
   standalone: true,
@@ -13,7 +12,6 @@ import { Trip } from '../models/trip';
   templateUrl: './edit-trip.component.html',
   styleUrls: ['./edit-trip.component.css']
 })
-
 export class EditTripComponent implements OnInit {
   public editForm!: FormGroup;
   trip!: Trip;
@@ -73,16 +71,15 @@ export class EditTripComponent implements OnInit {
   public onSubmit(): void {
     this.submitted = true;
     if (this.editForm.valid) {
-      this.tripDataService.updateTrip(this.editForm.value)
-        .subscribe({
-          next: (value: any) => {
-            console.log(value);
-            this.router.navigate(['']);
-          },
-          error: (error: any) => {
-            console.log('Error: ' + error);
-          }
-        });
+      this.tripDataService.updateTrip(this.editForm.value).subscribe({
+        next: (value: any) => {
+          console.log('Trip updated successfully', value);
+          this.router.navigate(['']); // This typically redirects to the trip listing page after updating
+        },
+        error: (error: any) => {
+          console.log('Error updating trip: ' + error);
+        }
+      });
     }
   }
 

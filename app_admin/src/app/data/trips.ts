@@ -30,4 +30,14 @@ export const trips = [
             "image": "reef 3.jpg",
             "description": "<p>Donec sed felis risus. Nulla facilisi. Donec a orci tellus, et auctor odio. Fusce ac orci nibh, quis semper arcu. Cras orci neque, euismod et accumsan ac, sagittis molestie lorem. Proin odio sapien, elementum at tempor non.</p>"
         }
+      {
+        code: 'NEWTRIPEXAMPLE',
+        name: 'New Adventure',
+        length: '7 nights / 8 days',
+        start: '2024-12-15T08:00:00Z',
+        resort: 'Coral Cove, 5 stars',
+        perPerson: '1499.00',
+        image: 'newtrip.jpg',
+        description: '<p>Experience the best of Coral Cove. Adventure awaits!</p>'
+      }
     ];
